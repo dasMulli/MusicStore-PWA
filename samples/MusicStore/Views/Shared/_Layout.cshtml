@@ -1,10 +1,30 @@
-@inject IOptions<AppSettings> AppSettings
+﻿@inject IOptions<AppSettings> AppSettings
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title – @AppSettings.Value.SiteTitle</title>
+
+    <script>
+        if (navigator.serviceWorker) {
+
+            //This is the "Offline page" service worker
+
+            //Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+            if (navigator.serviceWorker.controller) {
+                console.log('[PWA Builder] active service worker found, no need to register');
+            } else {
+                //Register the ServiceWorker
+                navigator.serviceWorker.register('/pwabuilder-sw.js', {
+                    scope: '/'
+                }).then(function (reg) {
+                    console.log('Service worker has been registered for scope:' + reg.scope);
+                });
+            }
+        }
+    </script>
+    <link href="/manifest.json" rel="manifest" />
 
     <environment names="Development,NtlmAuthentication,OpenIdConnect,SocialTesting">
         <link rel="stylesheet" href="~/Content/bootstrap.css" />

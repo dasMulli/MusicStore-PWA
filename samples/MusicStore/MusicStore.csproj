@@ -8,6 +8,7 @@
     <RuntimeIdentifiers Condition="'$(Configuration)' != 'RuntimeStore'">win7-x86;win7-x64;linux-x64;osx-x64</RuntimeIdentifiers>
     <Configurations>Debug;Release;RuntimeStore</Configurations>
     <DebugType Condition="'$(TargetFramework)' == 'net461'">full</DebugType>
+    <UserSecretsId>2951ea28-8616-42e1-8f77-8c693078e078</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

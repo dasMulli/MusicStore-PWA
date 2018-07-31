@@ -9,7 +9,7 @@
     "DefaultConnection": {
       // Use a shared (and running) LocalDB database when executing in IIS e.g.
       // "Server=(localdb)\\.\\IIS_DB;Database=MusicStore;Trusted_Connection=False;MultipleActiveResultSets=true;User ID=iis_login;Password=********"
-      "ConnectionString": "Server=(localdb)\\MSSQLLocalDB;Database=MusicStore;Trusted_Connection=True;MultipleActiveResultSets=true;Connect Timeout=30;"
+      "ConnectionString": "Server=tcp:pwa-demos.database.windows.net,1433;Initial Catalog=musicstore-pwa;Persist Security Info=False;User ID=pwademo;Password=ANA8?policed;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;;"
     }
   }
 }
